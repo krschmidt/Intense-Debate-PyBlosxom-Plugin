@@ -1,7 +1,20 @@
-Plugin for IntenseDebate (http://intensedebate.com/)
+PyBlosxom Plugin for IntenseDebate (http://intensedebate.com/)
+
+IntenseDebate is a comment service which provides advanced utilities 
+for managing comments including threading, approval, spam checking, and more.
+
+PyBlosxom is a Python Blogging program with extensive customization and plugin
+capacities.
 
 To use:
 Add the variable intense_debate_id to your config.py file, where your id
 is the long string after idcomments_acct in the javascript IntenseDebate
 gives you. Then simply put the variable $intenseDebate where you want 
 your comments to appear.
+
+You can also use the variable $commentCount to get a count of the number of
+comments in the story, but this variable will only be populated if we're
+looking at a single story. Finding the number of comments for each story
+while looking at a collection of stories is beyond my current understanding of
+PyBlosxom.
+
