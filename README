@@ -1,0 +1,7 @@
+Plugin for IntenseDebate (http://intensedebate.com/)
+
+To use:
+Add the variable intense_debate_id to your config.py file, where your id
+is the long string after idcomments_acct in the javascript IntenseDebate
+gives you. Then simply put the variable $intenseDebate where you want 
+your comments to appear.
