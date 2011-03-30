@@ -9,7 +9,7 @@ threading, approval, spam checking, and more.
 To use:
 Add the variable intense_debate_id to your config.py file, where your id
 is the long string after idcomments_acct in the javascript IntenseDebate
-gives you. Then simply put the variable $intenseDebate where you want 
+gives you. Then simply put the variable $intenseDebate where you want
 your comments to appear.
 
 You can also use the variable $commentCount to get a count of the number of
@@ -35,7 +35,6 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
 02110-1301, USA.
-
 """
 
 __author__ = 'Kyle Schmidt <krschmidt@gmail.com>'
@@ -50,13 +49,12 @@ def verify_installation(request):
     return 1
 
 def cb_prepare(args):
-  request = args["request"]
-  config = request.getConfiguration()
-  data = request.getData()
-  if data.has_key("entry_list"):
-    if len(data["entry_list"]) == 1:
-        data["intenseDebate"] = "<script>var idcomments_acct = \'" + config['intense_debate_id'] + "\'; var idcomments_post_id; var idcomments_post_url; </script> <span id=\"IDCommentsPostTitle\" style=\"display:none\"></span> <script type=\'text/javascript\' src=\'http://www.intensedebate.com/js/genericCommentWrapperV2.js\'></script>"
-        data["commentCount"] = "<script>var idcomments_acct = \'" + config['intense_debate_id'] + "\';var idcomments_post_id; var idcomments_post_url;</script> <script type=\"text/javascript\" src=\"http://www.intensedebate.com/js/genericLinkWrapperV2.js\"></script>"
-    elif len(data["entry_list"]) > 1:
-        data["intenseDebate"] = ""
-       
+    request = args["request"]
+    config = request.getConfiguration()
+    data = request.getData()
+    if data.has_key("entry_list"):
+        if len(data["entry_list"]) == 1:
+            data["intenseDebate"] = "<script>var idcomments_acct = \'" + config['intense_debate_id'] + "\'; var idcomments_post_id; var idcomments_post_url; </script> <span id=\"IDCommentsPostTitle\" style=\"display:none\"></span> <script type=\'text/javascript\' src=\'http://www.intensedebate.com/js/genericCommentWrapperV2.js\'></script>"
+            data["commentCount"] = "<script>var idcomments_acct = \'" + config['intense_debate_id'] + "\';var idcomments_post_id; var idcomments_post_url;</script> <script type=\"text/javascript\" src=\"http://www.intensedebate.com/js/genericLinkWrapperV2.js\"></script>"
+        elif len(data["entry_list"]) > 1:
+            data["intenseDebate"] = ""
